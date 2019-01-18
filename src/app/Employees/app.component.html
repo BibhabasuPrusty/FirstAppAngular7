@@ -1,0 +1,87 @@
+<div class="panel panel-primary">
+ <div class="panel panel-heading">Employee</div>
+ <div class="panel panel-body">Employee Details
+    <nav class="navbar navbar-inverse">
+         <div class="container-fluid">
+          <!-- <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+          </div> -->
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+          </ul>
+        </div>
+      </nav>
+ <div class="row">
+
+  <div class="col-md-8"> 
+    <table class="table table-borded">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class='success'>
+          <td>John</td>
+          <td>Doe</td>
+          <td>john@example.com</td>
+        </tr>
+        <tr class='danger'>
+          <td>Mary</td>
+          <td>Moe</td>
+          <td>mary@example.com</td>
+        </tr>
+        <tr class='info'>
+          <td>July</td>
+          <td>Dooley</td>
+          <td>july@example.com</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+  </div>
+
+   <div class="col-md-2">
+   <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">
+      <span class="glyphicon glyphicon-print"></span>Primary     
+    </button>
+  </div>
+  
+  <div class="col-md-2">
+      <button type="button" class="btn btn-info">
+          <span class="glyphicon glyphicon-search"></span> Search
+        </button>
+  </div>
+
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+ </div>
+    <app-employee></app-employee>
+  </div>
