@@ -1,6 +1,7 @@
 <div class="panel panel-primary">
- <div class="panel panel-heading">Employee</div>
- <div class="panel panel-body">Employee Details
+ <div class="panel panel-heading">{{Title}}</div>
+ <div class="panel panel-body">
+   
     <nav class="navbar navbar-inverse">
          <div class="container-fluid">
           <!-- <div class="navbar-header">
@@ -17,6 +18,8 @@
  <div class="row">
 
   <div class="col-md-8"> 
+   <input type="text" [(ngModel)]='userInput' placeholder="Please enter text here"/>
+   <h4>{{userInput}} is {{(products | empSearch:userInput).length}}</h4>
     <table class="table table-borded">
       <thead>
         <tr>
@@ -82,6 +85,54 @@
     </div>
   </div>
 
- </div>
-    <app-employee></app-employee>
+  <div class="table-responsive" *ngIf="showTable" >
+    <table class="table">
+      <thead>
+        <tr>
+         <th><button class="btn btn-success" (click)="toggleImage()">
+           
+          {{showImage?"Hide image":"ShowImage"}}
+        
+         </button></th>
+        <th>ProductNBame</th>
+        <th>ProductCode</th>
+        <th>ReleaseDate</th>
+        <th>Price</th>
+        <th>Rating</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prod of products | empSearch:userInput" >
+         <td><img [src]="prod.imageUrl"
+          *ngIf="showImage"
+          
+          />
+        
+        
+        </td>
+        <td style="color:royalblue">{{prod.productName | myUpper:'lower':'vvv' }}</td>
+        <td>{{prod.productCode | myUpper:'upper'}}</td>
+        <td>{{prod.releaseDate}}</td>
+        <td [ngStyle]="{'background-color':prod.price<20?'red':'blue','color':'white'}"  >
+          {{prod.price | discounted:10 | currency:"INR" }}</td>
+          <!-- <td>
+           {{prod.starRating}}
+          </td> -->
+
+          <td>            
+                  <app-star  [rating]="prod.starRating" (ratingClicked)="onDataReceive($event)"   ></app-star>
+            
+           </td>    
+
+      </tr>
+
+      </tbody>
+
+
+    </table>
+
   </div>
+
+  <div class="panel panel-info">
+  <div class="panel panel-heading">{{dept}}</div>
+ <div class="panel panel-body">{{deptDetails}}</div>
