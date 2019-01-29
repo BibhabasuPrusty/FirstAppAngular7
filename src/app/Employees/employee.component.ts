@@ -33,7 +33,15 @@ export class EmployeeComponent implements OnInit
 
      ngOnInit():void{
 
-this.products=this._empService.getProducts();
+// this.products=this._empService.getProducts();
+
+     this._empService.getProducts()
+    .subscribe((data)=> this.products=data);
+
+    //   this._empService.getProducts()
+    // .then((data)=> this.products=data);
+
+
      }
 
      toggleImage():void

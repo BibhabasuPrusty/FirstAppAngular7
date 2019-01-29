@@ -2,19 +2,7 @@
  <div class="panel panel-heading">{{Title}}</div>
  <div class="panel panel-body">
    
-    <nav class="navbar navbar-inverse">
-         <div class="container-fluid">
-          <!-- <div class="navbar-header">
-            <a class="navbar-brand" href="#">WebSiteName</a>
-          </div> -->
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-          </ul>
-        </div>
-      </nav>
+    
  <div class="row">
 
   <div class="col-md-8"> 
@@ -110,7 +98,14 @@
         
         
         </td>
-        <td style="color:royalblue">{{prod.productName | myUpper:'lower':'vvv' }}</td>
+        <td style="color:royalblue">
+          <a [routerLink]="['/products',prod.productId]">
+            {{prod.productName | myUpper:'lower':'vvv' }}</a>
+       
+   
+
+
+        </td>
         <td>{{prod.productCode | myUpper:'upper'}}</td>
         <td>{{prod.releaseDate}}</td>
         <td [ngStyle]="{'background-color':prod.price<20?'red':'blue','color':'white'}"  >
@@ -136,3 +131,14 @@
   <div class="panel panel-info">
   <div class="panel panel-heading">{{dept}}</div>
  <div class="panel panel-body">{{deptDetails}}</div>
+
+
+ 
+
+
+  <!-- <a [routerLink]="['/products',prod.productId]"
+  [queryParams]="{name:prod.productName,description:prod.description,img:prod.imageUrl}" >
+{{prod.productName | myUpper:'lower':'vvv' }}
+
+</a>  -->
+ 
