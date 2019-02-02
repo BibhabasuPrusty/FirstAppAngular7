@@ -16,7 +16,7 @@ export class EmployeeComponent implements OnInit
 {
   constructor(private _empService:EmployeeService)
   {}
-    Title:String='Employee Details';
+    Title:String='Product Details';
     dept:String='Department';
     deptDetails:String='Department Details';
     showTable:Boolean=true;

@@ -8,49 +8,11 @@
   <div class="col-md-8"> 
    <input type="text" [(ngModel)]='userInput' placeholder="Please enter text here"/>
    <h4>{{userInput}} is {{(products | empSearch:userInput).length}}</h4>
-    <table class="table table-borded">
-      <thead>
-        <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class='success'>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
-        </tr>
-        <tr class='danger'>
-          <td>Mary</td>
-          <td>Moe</td>
-          <td>mary@example.com</td>
-        </tr>
-        <tr class='info'>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
-        </tr>
-      </tbody>
-    </table>
-
-
+    
 
   </div>
 
-   <div class="col-md-2">
-   <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">
-      <span class="glyphicon glyphicon-print"></span>Primary     
-    </button>
-  </div>
-  
-  <div class="col-md-2">
-      <button type="button" class="btn btn-info">
-          <span class="glyphicon glyphicon-search"></span> Search
-        </button>
-  </div>
-
+   
 </div>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -74,7 +36,7 @@
   </div>
 
   <div class="table-responsive" *ngIf="showTable" >
-    <table class="table">
+    <table class="table table-borded">
       <thead>
         <tr>
          <th><button class="btn btn-success" (click)="toggleImage()">
@@ -128,12 +90,7 @@
 
   </div>
 
-  <div class="panel panel-info">
-  <div class="panel panel-heading">{{dept}}</div>
- <div class="panel panel-body">{{deptDetails}}</div>
 
-
- 
 
 
   <!-- <a [routerLink]="['/products',prod.productId]"

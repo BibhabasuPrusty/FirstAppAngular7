@@ -1,8 +1,25 @@
 <div [ngStyle]="{'background-color':'black'}"  >
     <div class="panel-heading">
     
-    <h4>Home Page</h4>
+    <h4 [ngStyle]="{'text-align': 'center'}">Home Page</h4>
     </div>
-
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{pageTitle}}
+        </div>
+        <div class="panel-body"  >
+            <div class="row" >
+                <img src="./assets/logo.png" 
+                     class="img-responsive center-block"
+                     style="max-height:300px;padding-bottom:50px"/>
+            </div>
+            <div class="row"  >
+                <div class="text-center">Developed by:</div>
+                <h3 class="text-center">Bibhabasu Prusty</h3>
+    
+                
+            </div>
+        </div>
+    </div>
     
     </div>
