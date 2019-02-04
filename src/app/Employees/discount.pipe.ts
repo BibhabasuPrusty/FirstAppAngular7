@@ -10,6 +10,7 @@ export class DiscountedPipe implements PipeTransform
 {
 
 transform(value:number,x :number)
+transform(value:number,x :number)
 {
     value=value-x;
     return value;

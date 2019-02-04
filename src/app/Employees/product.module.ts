@@ -12,6 +12,7 @@ import { EmployeeSearchPipe } from './empSearch.pipe';
 
 import { EmployeeService } from './employee.service';
 import { SharedModule } from './Shared/shared.module';
+import { RouterGaurds } from './product.gaurds';
 
 
 @NgModule(
@@ -31,13 +32,16 @@ import { SharedModule } from './Shared/shared.module';
                RouterModule.forChild([
 
                 {path: 'products', component: EmployeeComponent},
-                {path: 'products/:id', component: ProductDetailsComponent},
+                {path: 'products/:id',canActivate:[RouterGaurds], component: ProductDetailsComponent},
                 
                ]),
                SharedModule
 
       ],
-providers:[EmployeeService]
+providers:[EmployeeService,
+          RouterGaurds 
+
+]
 
 
 
